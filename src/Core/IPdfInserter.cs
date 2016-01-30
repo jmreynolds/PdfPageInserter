@@ -1,20 +1,33 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 
 namespace Core
 {
     public interface IPdfInserter
     {
-        string OriginalPdfPath { get; set; }
+        string InputPath { get; set; }
+        event EventHandler InputPathChanged;
+
         int NumberOfPagesInSequence { get; set; }
         int IntervalToInsert { get; set; }
         string OutputPdfPath { get; set; }
+
         /// <summary>
         /// This method is used to insert the Pages.
         /// </summary>
-        /// <param name="originalPdfPath">Should be a fully defined path to a PDF. Currently not supporting Network Paths.</param>
+        /// <param name="inputPath">Should be a fully defined path to a PDF. Currently not supporting Network Paths.</param>
         /// <param name="numberOfPagesInSequence">Define the number of pages in a sequence (letter, statement, etc).</param>
         /// <param name="intervalToInsert">Define the interval for inserting a blank page.</param>
         /// <param name="outputPdfPath">Define the output PDF location. Currently not supporting Network Paths.</param>
-        void InsertPages(string originalPdfPath, int numberOfPagesInSequence, int intervalToInsert, string outputPdfPath);
+        void InsertPages();
+
+        /// <summary>
+        /// Honestly, this is mostly used for Unit Testing purposes.
+        /// Not great API design, but it serves my purposes.
+        /// </summary>
+        /// <param name="pdfFile"></param>
+        /// <returns></returns>
+        int GetPageCount(string pdfFile);
     }
+
 }
