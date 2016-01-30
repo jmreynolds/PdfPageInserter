@@ -8,8 +8,20 @@ namespace Service
 {
     public class PdfInserter : IPdfInserter
     {
+        private string _inputPath;
 
-        public string InputPath { get; set; }
+        public string InputPath
+        {
+            get { return _inputPath; }
+            set
+            {
+                _inputPath = value;
+                InputPathChanged?.Invoke(this, new EventArgs());
+            }
+        }
+
+        public event EventHandler InputPathChanged;
+
         public int NumberOfPagesInSequence { get; set; }
         public int IntervalToInsert { get; set; }
         public string OutputPdfPath { get; set; }

@@ -1,10 +1,13 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 
 namespace Core
 {
     public interface IPdfInserter
     {
         string InputPath { get; set; }
+        event EventHandler InputPathChanged;
+
         int NumberOfPagesInSequence { get; set; }
         int IntervalToInsert { get; set; }
         string OutputPdfPath { get; set; }
