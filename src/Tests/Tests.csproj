@@ -52,7 +52,7 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="UnitTests.cs" />
+    <Compile Include="PdfUnitTestsBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
