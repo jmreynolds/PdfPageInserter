@@ -54,6 +54,12 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="InserterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,9 @@
       <DependentUpon>InserterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InserterForm.resx">
       <DependentUpon>InserterForm.cs</DependentUpon>
     </EmbeddedResource>

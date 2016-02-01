@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Core;
+﻿using Core;
 using Ninject.Modules;
 using Service;
 
@@ -18,7 +13,7 @@ namespace Infrastructure.Modules
 
         public override void Load()
         {
-            Bind<IPdfInserter>().To<PdfInserter>();
+            Bind<IPdfInserter>().To<PdfSharpPdfInserter>();
         }
     }
 }

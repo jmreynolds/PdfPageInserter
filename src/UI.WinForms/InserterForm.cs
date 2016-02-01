@@ -32,6 +32,7 @@ namespace UI.WinForms
 
         private void btnBrowse_Click(object sender, EventArgs e)
         {
+            lblComplete.Visible = false;
             var result = openFileDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -81,6 +82,12 @@ namespace UI.WinForms
                                $"Old file had {oldPageCount} pages.{Environment.NewLine}" +
                                $"New File has {newPageCount} pages.";
             lblComplete.Visible = true;
+        }
+
+        private void lnkAbout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AboutBox about = new AboutBox();
+            about.Show();
         }
     }
 }
