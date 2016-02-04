@@ -43,10 +43,7 @@ namespace Service
             document.Save(OutputPdfPath);
         }
 
-        public int GetPageCount(string pdfFile)
-        {
-            PdfDocument document = PdfReader.Open(pdfFile);
-            return document.PageCount;
-        }
+        public int GetPageCount(string pdfFile)=> PdfReader.Open(pdfFile).PageCount ;
+
     }
 }
